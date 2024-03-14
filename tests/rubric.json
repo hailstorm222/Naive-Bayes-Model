@@ -1,0 +1,79 @@
+{
+    "test_setup": {
+        "weight": "required",
+        "depends": []
+    },
+    "test_imports": {
+        "weight": "required",
+        "depends": []
+    },
+    "test_setup_other_pdfs": {
+        "weight": 0,
+        "depends": ["test_setup"]
+    },
+    "test_setup_late_days": {
+        "weight": 0,
+        "depends": ["test_setup"]
+    },
+
+    "test_scipy_sparse_to_numpy": {
+        "weight": 0.5,
+        "depends": []
+    },
+    "test_scipy_sparse_multiplication":{
+        "weight": 0.5,
+        "depends": []
+    },
+
+    "test_softmax": {
+        "weight": 1,
+        "depends": []
+    },
+    "test_stable_log_sum":{
+        "weight": 1,
+        "depends": []
+    },
+
+
+    "test_tiny_dataset_a": {
+        "weight": 2,
+        "depends": ["test_softmax"]
+    },
+    "test_smoothing": {
+        "weight": 2,
+        "depends": ["test_tiny_dataset_a"]
+    },
+    "test_without_em": {
+        "weight": 3,
+        "depends": ["test_tiny_dataset_a"]
+    },
+
+    "test_em_initialization": {
+        "weight": 1,
+        "depends": ["test_without_em"]
+    },
+    "test_tiny_dataset_b": {
+        "weight": 2,
+        "depends": ["test_em_initialization"]
+    },
+    "test_alpha_beta_normalized": {
+        "weight": 1,
+        "depends": ["test_tiny_dataset_a",
+                    "test_tiny_dataset_b"]
+    },
+    "test_em_basics": {
+        "weight": 3,
+        "depends": ["test_tiny_dataset_b",
+                    "test_em_initialization"]
+    },
+
+    "test_comparison_naive_bayes": {
+        "weight": 1,
+        "depends": ["test_em_basics",
+                    "test_without_em"]
+    },
+    "test_frq1": {
+        "weight": 1,
+        "depends": ["test_comparison_naive_bayes"]
+    }
+}

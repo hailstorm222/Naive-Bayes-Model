@@ -1,0 +1,19 @@
+{
+    "test_imports": true,
+    "test_setup": false,
+    "test_setup_other_pdfs": false,
+    "test_setup_late_days": false,
+    "test_frq1": true,
+    "test_tiny_dataset_a": true,
+    "test_tiny_dataset_b": true,
+    "test_alpha_beta_normalized": true,
+    "test_smoothing": true,
+    "test_without_em": true,
+    "test_em_initialization": true,
+    "test_em_basics": true,
+    "test_comparison_naive_bayes": true,
+    "test_scipy_sparse_to_numpy": true,
+    "test_scipy_sparse_multiplication": true,
+    "test_softmax": true,
+    "test_stable_log_sum": true
+}
